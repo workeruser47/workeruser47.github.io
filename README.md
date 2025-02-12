@@ -1,1 +1,1 @@
-# workeruser47.github.io
+# https://workeruser47.github.io/trakttv.js
