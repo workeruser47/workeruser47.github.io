@@ -1,1 +1,1 @@
-# https://workeruser47.github.io/trakttv.js
+[trakttv.js](https://workeruser47.github.io/trakttv.js)
