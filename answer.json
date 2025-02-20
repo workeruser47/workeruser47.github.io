@@ -5,8 +5,66 @@
 				"plannedToWatch": {
 					"movies": {
 						"limit": 50,
-						"total": 2,
+						"total": 3,
 						"items": [
+							{
+								"movie": {
+									"__typename": "TvSeries",
+									"id": 404900,
+									"gallery": {
+										"posters": {
+											"__typename": "MoviePosters",
+											"vertical": {
+												"__typename": "Image",
+												"avatarsUrl": "//avatars.mds.yandex.net/get-ott/1672343/2a0000017802c0cfb57b427a3d58690d4a51",
+												"fallbackUrl": null
+											},
+											"verticalWithRightholderLogo": null,
+											"horizontal": {
+												"__typename": "Image",
+												"avatarsUrl": "//avatars.mds.yandex.net/get-ott/223007/2a0000017802c0f157fa8afd768d8d10200b",
+												"fallbackUrl": null
+											},
+											"horizontalWithRightholderLogo": null,
+											"verticalIntro": null,
+											"verticalIntroWithRightholderLogo": null,
+											"horizontalIntro": null,
+											"horizontalIntroWithRightholderLogo": null
+										}
+									},
+									"rating": {
+										"__typename": "Rating",
+										"kinopoisk": {
+											"__typename": "RatingValue",
+											"isActive": true,
+											"count": 697548,
+											"value": 8.9
+										}
+									},
+									"title": {
+										"__typename": "Title",
+										"localized": "Во все тяжкие",
+										"original": "Breaking Bad"
+									},
+									"genres": [
+										{
+											"__typename": "Genre",
+											"id": 16,
+											"name": "криминал"
+										},
+										{
+											"__typename": "Genre",
+											"id": 8,
+											"name": "драма"
+										},
+										{
+											"__typename": "Genre",
+											"id": 4,
+											"name": "триллер"
+										}
+									]
+								}
+							},
 							{
 								"movie": {
 									"__typename": "Film",
@@ -37,7 +95,7 @@
 										"kinopoisk": {
 											"__typename": "RatingValue",
 											"isActive": true,
-											"count": 1067784,
+											"count": 1067786,
 											"value": 9.1
 										}
 									},
@@ -93,7 +151,7 @@
 										"kinopoisk": {
 											"__typename": "RatingValue",
 											"isActive": true,
-											"count": 192490,
+											"count": 192732,
 											"value": 7.3
 										}
 									},
