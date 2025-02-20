@@ -21,7 +21,6 @@
 									"__typename": "Film",
 									"id": 326,
 									"title": {
-										"__typename": "Title",
 										"localized": "Побег из Шоушенка",
 										"original": "The Shawshank Redemption"
 									}
@@ -32,7 +31,6 @@
 									"__typename": "Film",
 									"id": 5504100,
 									"title": {
-										"__typename": "Title",
 										"localized": "Бриджит Джонс. Без ума от мальчишки",
 										"original": "Bridget Jones: Mad About the Boy"
 									}
