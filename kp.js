@@ -1,13 +1,13 @@
 (function() {
     'use strict';
     var network = new Lampa.Reguest();
-  
+
     function getRandomKinopoiskTechKey() {
         const keys = ['8c8e1a50-6322-4135-8875-5d40a5420d86', 'f1d94351-2911-4485-b037-97817098724e', '8c8e1a50-6322-4135-8875-5d40a5420d86'];
         const randomIndex = Math.floor(Math.random() * keys.length);
         return keys[randomIndex];
     }
-  
+
     function calculateProgress(total, current) {
         if(total == current) {
             Lampa.Noty.show('Обновление списка фильмов Кинопоиска завершено');
@@ -22,7 +22,7 @@
             }
         }
     }
-  
+
     function processKinopoiskData(data) {
         // use cache
         if(data && data.data.userProfile && data.data.userProfile.userData && data.data.userProfile.userData.plannedToWatch) {
@@ -77,10 +77,10 @@
                                     }
                                     if(movieItem) {
                                         console.log('Kinopoisk', 'TMDB id found: ' + movieItem.id + ' for IMDB movie id: ' + movieIMDBid + ', kinopoisk id: ' + String(m.movie.id));
-  
+
                                         var movieDateStr = movieItem.release_date || movieItem.first_air_date; // film or tv series
                                         var movieDate = new Date(movieDateStr);
-  
+
                                         if (movieDate <= new Date()) {                                            
                                             movieItem.kinopoisk_id = String(m.movie.id);
                                             movieItem.source = "tmdb";
@@ -129,11 +129,10 @@
             console.log('Kinopoisk', data);
         }
     }
-  
+
     function getKinopoiskData() {
         console.log('Kinopoisk', 'Starting to get Kinopoisk data...');
         var oauth = Lampa.Storage.get('kinopoisk_access_token');
-        console.log(oauth);
         // google script is used to act as CORS proxy
         network.silent('https://script.google.com/macros/s/AKfycbwQhxl9xQPv46uChWJ1UDg6BjSmefbSlTRUoSZz5f1rZDRvdhAGTi6RHyXwcSeyBtPr/exec?oauth=' + oauth, function(data) { // on success
             processKinopoiskData(data);
@@ -141,7 +140,7 @@
             console.log('Kinopoisk', 'Error, google script', data);
         });
     }
-  
+
     function full(params, oncomplete, onerror) {
         // https://github.com/yumata/lampa-source/blob/main/src/utils/reguest.js
         // https://github.com/yumata/lampa-source/blob/main/plugins/collections/api.js
@@ -155,7 +154,7 @@
             "results": Lampa.Storage.get('kinopoisk_movies', [])
         });
     }
-  
+
     function clear() {
         network.clear();
     }
@@ -163,7 +162,7 @@
         full: full,
         clear: clear
     };
-  
+
     function component(object) {
         var comp = new Lampa.InteractionCategory(object);
         comp.create = function() {
@@ -252,12 +251,12 @@
             console.log('Kinopoisk', 'Failed to get device code', data);
         }, device_code_data);
     }
-  
+
     function getUserEmail() {
         network.silent('https://login.yandex.ru/info?format=json', function(data) {
             if (data.default_email) {
                 Lampa.Storage.set('kinopoisk_email', data.default_email);
-  
+
                 $('div[data-name="kinopoisk_auth"]').find('.settings-param__name').text(data.default_email); // NOT WORKING?
             } else {
                 Lampa.Noty.show('Не удалось получить email пользователя');
@@ -274,10 +273,9 @@
         });
         
     }
-  
-  
+
+
     function startPlugin() {
-        console.log('start');
         var manifest = {
             type: 'video',
             version: '0.4.0',
@@ -285,13 +283,14 @@
             description: '',
             component: 'kinopoisk'
         };
+        console.log('start'); //my
         Lampa.Manifest.plugins = manifest;
         Lampa.Component.add('kinopoisk', component);
         if(Lampa.Storage.get('kinopoisk_access_token', '') !== '' && Lampa.Storage.get('kinopoisk_token_expires', 0) < Date.now()) { // refresh token needed
             console.log('Kinopoisk', 'Token should be refreshed')
             getToken(Lampa.Storage.get('kinopoisk_refresh_token', ''), true);
         }
-  
+
         function add() {
             var button = $("<li class=\"menu__item selector\">\n            <div class=\"menu__ico\">\n                <svg width=\"239\" height=\"239\" viewBox=\"0 0 239 239\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\" xml:space=\"preserve\"><path fill=\"currentColor\" d=\"M215 121.415l-99.297-6.644 90.943 36.334a106.416 106.416 0 0 0 8.354-29.69z\" /><path fill=\"currentColor\" d=\"M194.608 171.609C174.933 197.942 143.441 215 107.948 215 48.33 215 0 166.871 0 107.5 0 48.13 48.33 0 107.948 0c35.559 0 67.102 17.122 86.77 43.539l-90.181 48.07L162.57 32.25h-32.169L90.892 86.862V32.25H64.77v150.5h26.123v-54.524l39.509 54.524h32.169l-56.526-57.493 88.564 46.352z\" /><path d=\"M206.646 63.895l-90.308 36.076L215 93.583a106.396 106.396 0 0 0-8.354-29.688z\" fill=\"currentColor\"/></svg>\n            </div>\n            <div class=\"menu__text\">".concat(manifest.name, "</div>\n        </li>"));
             button.on('hover:enter', function() {
@@ -360,7 +359,7 @@
                                 Lampa.Storage.set('kinopoisk_token_expires', 0); 
                                 $('div[data-name="kinopoisk_auth"]').find('.settings-param__name').text('Авторизоваться');                           
                             }
-  
+
                             Lampa.Controller.toggle('settings_component');
                         },
                         onBack: ()=>{
@@ -373,7 +372,7 @@
                 }
             }
         });
-  
+
         Lampa.SettingsApi.addParam({
             component: 'kinopoisk',
             param: {
@@ -412,4 +411,4 @@
         });        
     }
     if(!window.kinopoisk_ready) startPlugin();
-  })();
+})();
