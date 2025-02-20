@@ -283,7 +283,7 @@
             description: '',
             component: 'kinopoisk'
         };
-        console.log('start'); //my
+        console.log('Kinopoisk', 'start kp plugin'); //my
         Lampa.Manifest.plugins = manifest;
         Lampa.Component.add('kinopoisk', component);
         if(Lampa.Storage.get('kinopoisk_access_token', '') !== '' && Lampa.Storage.get('kinopoisk_token_expires', 0) < Date.now()) { // refresh token needed
