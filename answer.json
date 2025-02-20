@@ -1,0 +1,130 @@
+{
+	"data": {
+		"userProfile": {
+			"userData": {
+				"plannedToWatch": {
+					"movies": {
+						"limit": 50,
+						"total": 2,
+						"items": [
+							{
+								"movie": {
+									"__typename": "Film",
+									"id": 326,
+									"gallery": {
+										"posters": {
+											"__typename": "MoviePosters",
+											"vertical": {
+												"__typename": "Image",
+												"avatarsUrl": "//avatars.mds.yandex.net/get-ott/1648503/2a00000170151228609cebf3f79fc0812bdb",
+												"fallbackUrl": null
+											},
+											"verticalWithRightholderLogo": null,
+											"horizontal": {
+												"__typename": "Image",
+												"avatarsUrl": "//avatars.mds.yandex.net/get-ott/2419418/2a00000186aca5f7f339ff4cf343463bf911",
+												"fallbackUrl": null
+											},
+											"horizontalWithRightholderLogo": null,
+											"verticalIntro": null,
+											"verticalIntroWithRightholderLogo": null,
+											"horizontalIntro": null,
+											"horizontalIntroWithRightholderLogo": null
+										}
+									},
+									"rating": {
+										"__typename": "Rating",
+										"kinopoisk": {
+											"__typename": "RatingValue",
+											"isActive": true,
+											"count": 1067784,
+											"value": 9.1
+										}
+									},
+									"title": {
+										"__typename": "Title",
+										"localized": "Побег из Шоушенка",
+										"original": "The Shawshank Redemption"
+									},
+									"genres": [
+										{
+											"__typename": "Genre",
+											"id": 8,
+											"name": "драма"
+										}
+									]
+								}
+							},
+							{
+								"movie": {
+									"__typename": "Film",
+									"id": 5504100,
+									"gallery": {
+										"posters": {
+											"__typename": "MoviePosters",
+											"vertical": {
+												"__typename": "Image",
+												"avatarsUrl": "//avatars.mds.yandex.net/get-ott/1648503/2a000001950126cd1ea015ebf0cbba3f477a",
+												"fallbackUrl": null
+											},
+											"verticalWithRightholderLogo": null,
+											"horizontal": {
+												"__typename": "Image",
+												"avatarsUrl": "//avatars.mds.yandex.net/get-ott/374297/2a000001950126f4bf9a18f4de8d8b98d576",
+												"fallbackUrl": null
+											},
+											"horizontalWithRightholderLogo": null,
+											"verticalIntro": {
+												"__typename": "Image",
+												"avatarsUrl": "//avatars.mds.yandex.net/get-ott/2419418/2a00000194a8e1cc65f716dcc3b525d4b41e",
+												"fallbackUrl": null
+											},
+											"verticalIntroWithRightholderLogo": null,
+											"horizontalIntro": {
+												"__typename": "Image",
+												"avatarsUrl": "//avatars.mds.yandex.net/get-ott/2385704/2a00000194a8e1cb342e6820957437d7c020",
+												"fallbackUrl": null
+											},
+											"horizontalIntroWithRightholderLogo": null
+										}
+									},
+									"rating": {
+										"__typename": "Rating",
+										"kinopoisk": {
+											"__typename": "RatingValue",
+											"isActive": true,
+											"count": 192490,
+											"value": 7.3
+										}
+									},
+									"title": {
+										"__typename": "Title",
+										"localized": "Бриджит Джонс. Без ума от мальчишки",
+										"original": "Bridget Jones: Mad About the Boy"
+									},
+									"genres": [
+										{
+											"__typename": "Genre",
+											"id": 8,
+											"name": "драма"
+										},
+										{
+											"__typename": "Genre",
+											"id": 7,
+											"name": "мелодрама"
+										},
+										{
+											"__typename": "Genre",
+											"id": 6,
+											"name": "комедия"
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		}
+	}
+}
