@@ -1,0 +1,47 @@
+{
+	"data": {
+		"userProfile": {
+			"userData": {
+				"plannedToWatch": {
+					"movies": {
+						"total": 3,
+						"items": [
+					 		{
+								"movie": {
+									"__typename": "TvSeries",
+									"id": 404900,
+									"title": {
+										"localized": "Во все тяжкие",
+										"original": "Breaking Bad"
+									}
+								}
+							},
+							{
+								"movie": {
+									"__typename": "Film",
+									"id": 326,
+									"title": {
+										"__typename": "Title",
+										"localized": "Побег из Шоушенка",
+										"original": "The Shawshank Redemption"
+									}
+								}
+							},
+							{
+								"movie": {
+									"__typename": "Film",
+									"id": 5504100,
+									"title": {
+										"__typename": "Title",
+										"localized": "Бриджит Джонс. Без ума от мальчишки",
+										"original": "Bridget Jones: Mad About the Boy"
+									}
+								}
+							}
+						]
+					}
+				}
+			}
+		}
+	}
+}
